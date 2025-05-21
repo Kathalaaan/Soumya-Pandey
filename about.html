@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Freedom Business</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <!-- Favicon -->
+   <link rel="icon" href="images/favi.png" type="image/png"> <!-- Add this line -->
+
+   <!-- Favicon for 16x16 px - Browser Tab -->
+   <link rel="icon" href="images/favi-16x16.png" sizes="16x16" type="image/png">
+   
+   <!-- Favicon for 32x32 px - High-DPI Displays (Retina) -->
+   <link rel="icon" href="images/favi-32x32.png" sizes="32x32" type="image/png">
+   
+   <!-- Favicon for 48x48 px - Windows Desktop -->
+   <link rel="icon" href="images/favi-48x48.png" sizes="48x48" type="image/png">
+   
+   <!-- Favicon for 64x64 px - High-Resolution Displays -->
+   <link rel="icon" href="images/favi-64x64.png" sizes="64x64" type="image/png">
+   
+   <!-- For iOS Devices (Apple Touch Icon) -->
+   <link rel="apple-touch-icon" href="images/favi-180x180.png">
+   
+   <!-- For Android Devices (Chrome Web App) -->
+   <link rel="icon" href="images/favi-192x192.png" sizes="192x192" type="image/png">
+   
+   <!-- Favicon for Windows Tiles (Microsoft) -->
+   <meta name="msapplication-TileImage" content="images/favi-144x144.png">
+   <meta name="msapplication-TileColor" content="#ffffff">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background-color: #f7f3ec;
+      color: #fff;
+    }
+
+    .container {
+      max-width: 1240px;
+      margin: 60px auto;
+      background-color: #eb6e4f;
+      padding: 60px 40px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: flex-start;
+      border-radius: 8px;
+    }
+
+    .image-box {
+      flex: 1 1 400px;
+      max-width: 500px;
+      padding: 0 20px;
+    }
+
+    .image-box img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 0;
+    }
+
+    .text-box {
+      flex: 1 1 450px;
+      max-width: 550px;
+      padding: 0 20px;
+    }
+
+    .text-box h1 {
+      font-size: 32px;
+      font-weight: 700;
+      margin-bottom: 24px;
+      line-height: 1.4;
+    }
+
+    .text-box p {
+      font-size: 17px;
+      font-weight: 400;
+      line-height: 1.7;
+      margin-bottom: 20px;
+    }
+
+    .text-box strong {
+      font-weight: 700;
+    }
+
+    .text-box em {
+      font-style: italic;
+    }
+
+    .cta-section {
+      background-color: #eb6e4f;
+      padding: 40px 40px 80px;
+      text-align: left;
+      max-width: 1240px;
+      margin: 0 auto;
+      border-radius: 0 0 8px 8px;
+      position: relative;
+    }
+
+    .cta-button {
+      display: inline-flex;
+      align-items: center;
+      background-color: #fff;
+      color: #000;
+      font-weight: 600;
+      font-size: 14px;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 999px;
+      text-decoration: none;
+      transition: background 0.3s ease;
+    }
+
+    .cta-button:hover {
+      background-color: #f0f0f0;
+    }
+
+    .cta-button span {
+      display: inline-block;
+      background-color: #000;
+      color: #fff;
+      width: 28px;
+      height: 28px;
+      margin-left: 12px;
+      border-radius: 50%;
+      font-size: 16px;
+      text-align: center;
+      line-height: 28px;
+    }
+
+    .subtext {
+      font-size: 12px;
+      color: #fff;
+      text-transform: uppercase;
+      margin-top: 12px;
+    }
+
+    .corner-logo {
+      position: absolute;
+      right: 40px;
+      bottom: 40px;
+      width: 60px;
+    }
+
+    @media (max-width: 960px) {
+      .container {
+        flex-direction: column;
+        padding: 40px 20px;
+      }
+
+      .cta-section {
+        padding: 30px 20px 60px;
+        text-align: center;
+      }
+
+      .cta-button {
+        justify-content: center;
+      }
+
+      .corner-logo {
+        position: static;
+        display: block;
+        margin: 30px auto 0;
+      }
+
+      .text-box h1 {
+        font-size: 28px;
+      }
+    }
+
+    @media (max-width: 500px) {
+      .text-box p {
+        font-size: 16px;
+      }
+
+      .text-box h1 {
+        font-size: 24px;
+      }
+
+      .cta-button {
+        font-size: 13px;
+        padding: 10px 20px;
+      }
+
+      .cta-button span {
+        width: 24px;
+        height: 24px;
+        font-size: 14px;
+        line-height: 24px;
+      }
+    }
+
+    body {
+  margin: 0;
+  font-family: 'Helvetica Neue', sans-serif;
+  background-color: #f8f5f0;
+  color: #1c1c1c;
+}
+
+.ed-footer {
+  padding: 40px 20px;
+  background-color: #f8f5f0;
+  text-align: center;
+}
+
+.ed-footer-top {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  border-top: 1px solid #1c1c1c;
+  padding-top: 40px;
+  margin-bottom: 40px;
+  position: relative;
+}
+
+.ed-footer-top::before {
+  content: '*';
+  font-size: 40px;
+  color: #ec6e45;
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #f8f5f0;
+  padding: 0 10px;
+}
+
+.ed-column {
+  flex: 1;
+  min-width: 200px;
+  padding: 20px;
+  text-align: left;
+}
+
+.ed-heading {
+  font-size: 14px;
+  text-transform: uppercase;
+  color: #999;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.ed-heading::before {
+  content: '•';
+  color: #ec6e45;
+  margin-right: 6px;
+}
+
+.ed-column ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.ed-column a {
+  text-decoration: none;
+  color: #1c1c1c;
+  display: block;
+  margin: 8px 0;
+  font-weight: 500;
+}
+
+.ed-logo-center {
+  text-align: center;
+  margin: 40px 0;
+  position: relative;
+}
+
+.ed-logo {
+  font-size: 100px;
+  font-weight: bold;
+  color: #ec6e45;
+  margin: 0;
+  line-height: 1;
+}
+
+.ed-scroll-top {
+  width: 36px;
+  height: 36px;
+  background-color: #fff;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  position: absolute;
+  right: 50%;
+  bottom: 8px;
+  transform: translateX(50%);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  cursor: pointer;
+}
+
+.ed-footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+  padding-top: 20px;
+  flex-wrap: wrap;
+  border-top: 1px solid #eee;
+}
+
+.ed-terms a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: #1c1c1c;
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .ed-footer-top {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .ed-footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .ed-logo {
+    font-size: 60px;
+  }
+
+  .ed-scroll-top {
+    right: auto;
+    left: 50%;
+  }
+}
+  </style>
+</head>
+<body>
+
+  <div class="container"id ="About">
+    <div class="image-box">
+      <img src="img/IMG_1096.JPG" alt="Portrait Image">
+    </div>
+    <div class="text-box">
+    
+<h1>I BUILT MY BUSINESS FOR FREEDOM. NOW I HELP OTHERS DO THE SAME.</h1>
+<p>I’m Soumya Pandey, a social media marketer with over 5 years of experience. Bold brands. Real results. Lasting impact.</p>
+
+<p><strong>From the outside</strong>, it looked like momentum. A growing team, a booked-out calendar. <strong>On the inside?</strong> I wanted deeper meaning, asking myself: <em>what’s next?</em></p>
+
+<p>I knew I was here to do more. But I couldn’t find a space where creativity and strategy could <em>both</em> lead.</p>
+
+<p>So I built my own. Assembled a powerhouse team of 10+ expert freelancers in Bandra, Mumbai. And channelled everything I’d learned into building personal brands that cut through the noise and convert with intention.</p>
+
+
+
+<p>Now, my mission is clear:</p><strong>Help 5,000 founders, creators, coaches, and consultants build personal brands that give them their life back – by 2030. Because if I can do it, so can you.</strong></p>
+    </div>
+  </div>
+
+  <div class="cta-section">
+    <a href="https://calendly.com/soumyapandeyjii/30min?month=2025-05" class="cta-button">
+      JOIN THE FREE CONSULTATION
+      <span>→</span>
+    </a>
+    <div class="subtext">• START BUILDING YOUR BRAND, YOUR WAY</div>
+   
+  </div>
+<footer class="ed-footer">
+  <div class="ed-footer-top">
+    <div class="ed-column">
+      <p class="ed-heading">FIND</p>
+      <ul>
+        <li><a href="#About">ABOUT ME</a></li>
+        <li><a href="index.html">HOMEPAGE</a></li>
+        <li><a href="testimonial.html">TESTIMONIAL</a></li>
+        <li><a href="contact.html">CONTACT</a></li>
+      </ul>
+    </div>
+    <div class="ed-column">
+      <p class="ed-heading">WORK WITH ME</p>
+      <ul>
+       
+        <li><a href="https://calendly.com/soumyapandeyjii/30min?month=2025-05">THE BRAND BUILDER™</a></li>
+      </ul>
+    </div>
+    <div class="ed-column">
+      <p class="ed-heading">CONNECT WITH ME</p>
+      <ul>
+        <li><a href="https://www.linkedin.com/in/soumya-pandey-9076b4339/">LINKEDIN</a></li>
+        <li><a href="https://www.instagram.com/your_smm_soumya/?hl=en">INSTAGRAM</a></li>
+        <li><a href="mailto:drsoumypandey94@gmail.com">EMAIL ME</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="ed-logo-center">
+    <h1 class="ed-logo">Soumya Pandey</h1>
+    
+  </div>
+
+  <div class="ed-footer-bottom">
+    <p>Soumya Pandey©2025</p>
+    <div class="ed-terms">
+      <a href="#">DESIGNED BY</a>
+      <a href="https://www.linkedin.com/in/nitish-kumar-516aba28b/">NITISH KUMAR</a>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

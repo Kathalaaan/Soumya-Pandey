@@ -1,0 +1,1363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ 
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Soumya Pandey</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Favicon -->
+   <link rel="icon" href="images/favi.png" type="image/png"> <!-- Add this line -->
+
+   <!-- Favicon for 16x16 px - Browser Tab -->
+   <link rel="icon" href="images/favi-16x16.png" sizes="16x16" type="image/png">
+   
+   <!-- Favicon for 32x32 px - High-DPI Displays (Retina) -->
+   <link rel="icon" href="images/favi-32x32.png" sizes="32x32" type="image/png">
+   
+   <!-- Favicon for 48x48 px - Windows Desktop -->
+   <link rel="icon" href="images/favi-48x48.png" sizes="48x48" type="image/png">
+   
+   <!-- Favicon for 64x64 px - High-Resolution Displays -->
+   <link rel="icon" href="images/favi-64x64.png" sizes="64x64" type="image/png">
+   
+   <!-- For iOS Devices (Apple Touch Icon) -->
+   <link rel="apple-touch-icon" href="images/favi-180x180.png">
+   
+   <!-- For Android Devices (Chrome Web App) -->
+   <link rel="icon" href="images/favi-192x192.png" sizes="192x192" type="image/png">
+   
+   <!-- Favicon for Windows Tiles (Microsoft) -->
+   <meta name="msapplication-TileImage" content="images/favi-144x144.png">
+   <meta name="msapplication-TileColor" content="#ffffff">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'DM Sans', sans-serif;
+      background-color: #f7f3ec;
+      color: #000;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 60px 100px 30px;
+    }
+    .logo {
+      font-size: 90px;
+      font-weight: bold;
+      color: #eb6e4f;
+      letter-spacing: -2px;
+    }
+    nav a {
+      margin-left: 40px;
+      text-decoration: none;
+      color: #000;
+      font-weight: 600;
+      font-size: 16px;
+    }
+    .hero {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      padding: 0 100px 100px;
+      flex-wrap: wrap;
+    }
+    .hero-text {
+      max-width: 48%;
+    }
+    .hero-text h1 {
+      font-size: 48px;
+      font-weight: 700;
+      margin: 0;
+      line-height: 1.2;
+    }
+    .hero-text p {
+      font-size: 17px;
+      line-height: 1.6;
+      margin: 20px 0;
+      color: #111;
+    }
+    .hero-text p strong {
+      font-weight: 700;
+    }
+    .cta-container1 {
+      display: flex;
+      align-items: center;
+      margin-top: 40px;
+    }
+    .cta-button1 {
+      background-color: #eb6e4f;
+      color: white;
+      font-weight: 700;
+      padding: 15px 25px;
+      border-radius: 50px;
+      display: flex;
+      align-items: center;
+      font-size: 14px;
+      white-space: nowrap;
+    }
+    .arrow-circle {
+      background-color: #f7f3ec;
+      color: black;
+      border-radius: 50%;
+      width: 30px;
+      height: 30px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-left: 10px;
+      font-size: 18px;
+    }
+    .line {
+      height: 1px;
+      background-color: #000;
+      flex-grow: 1;
+      margin-left: 20px;
+    }
+    .hero-img {
+      position: relative;
+      max-width: 48%;
+      text-align: right;
+    }
+    .hero-img img {
+      width: 100%;
+      max-width: 500px;
+    }
+    .hero-img span {
+      position: absolute;
+      right: 30px;
+      bottom: 10px;
+      font-style: italic;
+      font-size: 20px;
+    }
+
+    .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #e76f51;
+      padding: 60px 80px;
+      flex-wrap: wrap;
+    }
+    .left {
+      color: white;
+      max-width: 50%;
+    }
+    .left h1 {
+      font-size: 56px;
+      font-weight: 700;
+      margin: 0 0 20px 0;
+      line-height: 1.2;
+      text-transform: uppercase;
+    }
+    .left p {
+      font-size: 18px;
+      line-height: 1.6;
+      margin-bottom: 30px;
+    }
+    .button {
+      display: inline-block;
+      background-color: white;
+      color: black;
+      padding: 14px 24px;
+      font-weight: 700;
+      border-radius: 30px;
+      text-decoration: none;
+    }
+    .right img {
+      width: 100%;
+      max-width: 512px;
+      border-radius: 4px;
+    }
+
+   /* New Section - Pick a Plan */
+.plans-section {
+  padding: 80px 100px;
+}
+.plans-section h2 {
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+.plans-section p {
+  font-size: 18px;
+  margin-bottom: 40px;
+  max-width: 600px;
+}
+.plans-grid {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+.plan-card {
+  flex: 1;
+  min-width: 280px;
+  background-color: #f0ebe4;
+  border-radius: 4px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.plan-top {
+  padding: 40px 30px;
+  font-weight: 700;
+  font-size: 20px;
+}
+.plan-bottom {
+  padding: 30px;
+  color: white;
+  font-size: 15px;
+  line-height: 1.6;
+  position: relative;
+}
+.plan-1 .plan-bottom {
+  background-color: #eb6e4f;
+}
+.plan-2 .plan-bottom {
+  background-color: #90a78d;
+}
+.plan-bottom .arrow {
+  position: absolute;
+  right: 20px;
+  top: -20px;
+  background-color: black;
+  color: white;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.plan-bottom strong {
+  font-weight: 700;
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+  .plans-section {
+    padding: 60px 50px;
+  }
+  .plans-section h2 {
+    font-size: 30px;
+  }
+  .plans-section p {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .plans-section {
+    padding: 50px 30px;
+  }
+  .plans-grid {
+    flex-direction: column;
+  }
+  .plan-card {
+    width: 100%;
+  }
+  .plan-top {
+    font-size: 18px;
+    padding: 30px 20px;
+  }
+  .plan-bottom {
+    padding: 20px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .plans-section {
+    padding: 40px 20px;
+  }
+  .plans-section h2 {
+    font-size: 24px;
+  }
+  .plans-section p {
+    font-size: 15px;
+  }
+  .plan-bottom .arrow {
+    width: 26px;
+    height: 26px;
+    font-size: 14px;
+    right: 15px;
+    top: -15px;
+  }
+}
+
+
+    @media (max-width: 1024px) {
+      header, .hero, .container, .plans-grid {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 30px;
+      }
+      .logo {
+        font-size: 60px;
+      }
+      nav {
+        margin-top: 20px;
+      }
+      .hero-text, .hero-img, .left, .right {
+        max-width: 100%;
+      }
+      .hero-img img, .right img {
+        max-width: 100%;
+      }
+    }
+
+    /* Authority Academy Section */
+.authority-academy {
+  background-color: #f5f2ec;
+  padding: 80px 100px 0;
+}
+
+.academy-inner {
+  display: flex;
+  gap: 60px;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.academy-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+.academy-text {
+  flex: 1;
+  min-width: 300px;
+  max-width: 600px;
+  color: #111;
+}
+
+.academy-text .label {
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+}
+
+.academy-text h2 {
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.4;
+  margin-bottom: 20px;
+}
+
+.academy-text p {
+  font-size: 16px;
+  line-height: 1.7;
+  margin-bottom: 15px;
+}
+
+.academy-text strong {
+  font-weight: 700;
+}
+
+.academy-text em {
+  font-style: italic;
+}
+
+.academy-cta {
+  background-color: #90a78d;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 40px;
+  margin-top: 60px;
+  flex-wrap: wrap;
+}
+
+.academy-button {
+  background-color: white;
+  color: black;
+  padding: 14px 24px;
+  font-weight: 700;
+  border-radius: 30px;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  font-size: 14px;
+}
+
+.academy-button span {
+  margin-left: 10px;
+  font-size: 16px;
+}
+
+.academy-symbol {
+  font-size: 40px;
+  color: white;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+.academy-text ul {
+  padding-left: 20px;
+  margin-bottom: 20px;
+}
+
+.academy-text ul li {
+  margin-bottom: 8px;
+  line-height: 1.6;
+}
+
+@media (max-width: 1024px) {
+  .authority-academy {
+    padding: 40px 30px 0;
+  }
+  .academy-inner {
+    flex-direction: column;
+  }
+  .academy-cta {
+    flex-direction: column;
+    gap: 20px;
+    align-items: flex-start;
+  }
+  .academy-symbol {
+    font-size: 36px;
+    align-self: flex-end;
+  }
+}
+
+.newsletter-section {
+  padding: 60px 20px;
+  background-color: #f6f2ed;
+}
+
+.newsletter-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.newsletter-content {
+  flex: 1 1 600px;
+  padding: 40px;
+  background-color: #ffffff;
+  max-width: 650px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.newsletter-image {
+  flex: 1 1 400px;
+  max-width: 500px;
+  padding: 20px;
+}
+
+.newsletter-image img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.newsletter-content .tag {
+  color: #c2785b;
+  font-size: 14px;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+}
+
+.newsletter-content .title {
+  font-size: 36px;
+  font-weight: 600;
+  margin-bottom: 24px;
+  line-height: 1.3;
+}
+
+.newsletter-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.newsletter-list li {
+  font-size: 17px;
+  margin-bottom: 20px;
+  line-height: 1.6;
+  position: relative;
+  padding-left: 40px;
+}
+
+.newsletter-list li strong {
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 22px;
+  font-weight: 600;
+  color: #000;
+}
+
+/* Responsive layout for smaller devices */
+@media (max-width: 768px) {
+  .newsletter-container {
+    flex-direction: column;
+  }
+
+  .newsletter-content,
+  .newsletter-image {
+    max-width: 100%;
+    padding: 20px;
+  }
+
+  .newsletter-content {
+    order: 1;
+  }
+
+  .newsletter-image {
+    order: 2;
+  }
+}
+
+.cta-banner {
+  background-color: #8aa486;
+  padding: 80px 30px;
+  color: white;
+}
+
+.cta-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1400px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+
+.cta-left {
+  flex: 1 1 60%;
+}
+
+.cta-left h2 {
+  font-size: 60px;
+  font-weight: 600;
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+.cta-left span {
+  display: block;
+}
+
+.cta-left .small-text {
+  font-size: 18px;
+  margin-bottom: 30px;
+  color: #f1f1f1;
+}
+
+.cta-button {
+  display: inline-block;
+  background-color: #f9f5f0;
+  color: #000;
+  padding: 16px 36px;
+  font-size: 16px;
+  border-radius: 50px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #ffffff;
+}
+
+.cta-right {
+  flex: 1 1 30%;
+  text-align: right;
+}
+
+.free-label {
+  font-size: 60px;
+  font-weight: 500;
+  color: white;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .cta-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .cta-left h2 {
+    font-size: 42px;
+  }
+
+  .free-label {
+    font-size: 48px;
+    margin-top: 30px;
+  }
+
+  .cta-left,
+  .cta-right {
+    flex: 1 1 100%;
+  }
+}
+
+.expect-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 60px;
+  background-color: #f8f5f0;
+  font-family: 'Helvetica Neue', sans-serif;
+  flex-wrap: wrap;
+}
+
+.expect-text {
+  flex: 1;
+  padding-right: 40px;
+}
+
+.expect-text h1 {
+  font-size: 48px;
+  font-weight: bold;
+  line-height: 1.2;
+  margin-bottom: 40px;
+}
+
+.expect-point {
+  margin-bottom: 30px;
+}
+
+.expect-point h2 {
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+.expect-point p {
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+.expect-img {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ec6e45; /* coral-orange block */
+  padding: 40px;
+}
+
+.expect-img img {
+  max-width: 400px;
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+/* ------------------- Responsive Breakpoints ------------------- */
+
+/* Tablets and below */
+@media (max-width: 1024px) {
+  .expect-section {
+    flex-direction: column;
+    padding: 40px 20px;
+  }
+
+  .expect-text {
+    padding-right: 0;
+    text-align: center;
+  }
+
+  .expect-text h1 {
+    font-size: 36px;
+  }
+
+  .expect-point h2 {
+    font-size: 18px;
+  }
+
+  .expect-point p {
+    font-size: 16px;
+  }
+
+  .expect-img {
+    padding: 30px 0;
+    background-color: #ec6e45;
+  }
+
+  .expect-img img {
+    max-width: 300px;
+  }
+}
+
+/* Small Mobile Devices */
+@media (max-width: 480px) {
+  .expect-text h1 {
+    font-size: 28px;
+  }
+
+  .expect-point h2 {
+    font-size: 16px;
+  }
+
+  .expect-point p {
+    font-size: 14px;
+  }
+
+  .expect-img img {
+    max-width: 100%;
+    padding: 0 20px;
+  }
+}
+
+body {
+  margin: 0;
+  font-family: 'Helvetica Neue', sans-serif;
+  background-color: #f8f5f0;
+  color: #1c1c1c;
+}
+
+.ed-footer {
+  padding: 40px 20px;
+  background-color: #f8f5f0;
+  text-align: center;
+}
+
+.ed-footer-top {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  border-top: 1px solid #1c1c1c;
+  padding-top: 40px;
+  margin-bottom: 40px;
+  position: relative;
+}
+
+.ed-footer-top::before {
+  content: '*';
+  font-size: 40px;
+  color: #ec6e45;
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #f8f5f0;
+  padding: 0 10px;
+}
+
+.ed-column {
+  flex: 1;
+  min-width: 200px;
+  padding: 20px;
+  text-align: left;
+}
+
+.ed-heading {
+  font-size: 14px;
+  text-transform: uppercase;
+  color: #999;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.ed-heading::before {
+  content: '•';
+  color: #ec6e45;
+  margin-right: 6px;
+}
+
+.ed-column ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.ed-column a {
+  text-decoration: none;
+  color: #1c1c1c;
+  display: block;
+  margin: 8px 0;
+  font-weight: 500;
+}
+
+.ed-logo-center {
+  text-align: center;
+  margin: 40px 0;
+  position: relative;
+}
+
+.ed-logo {
+  font-size: 100px;
+  font-weight: bold;
+  color: #ec6e45;
+  margin: 0;
+  line-height: 1;
+}
+
+.ed-scroll-top {
+  width: 36px;
+  height: 36px;
+  background-color: #fff;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  position: absolute;
+  right: 50%;
+  bottom: 8px;
+  transform: translateX(50%);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  cursor: pointer;
+}
+
+.ed-footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+  padding-top: 20px;
+  flex-wrap: wrap;
+  border-top: 1px solid #eee;
+}
+
+.ed-terms a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: #1c1c1c;
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .ed-footer-top {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .ed-footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .ed-logo {
+    font-size: 60px;
+  }
+
+  .ed-scroll-top {
+    right: auto;
+    left: 50%;
+  }
+}
+
+body {
+  margin: 0;
+  font-family: 'Helvetica Neue', sans-serif;
+  background-color: #f9f5ef;
+}
+
+.testimonial-section {
+  max-width: 1200px;
+  margin: 60px auto;
+  padding: 20px;
+}
+
+.testimonial-card {
+  text-align: center;
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.testimonial-card img {
+  width: 100%;
+  max-width: 260px;
+  height: 340px;
+  object-fit: cover;
+  border-radius: 50% / 40%;
+  margin-bottom: 20px;
+}
+
+.testimonial-card h3 {
+  font-size: 14px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  margin-bottom: 5px;
+}
+
+.testimonial-card .title {
+  font-size: 12px;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+  color: #000;
+}
+
+.testimonial-card p {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #111;
+}
+
+/* Swiper overrides */
+.swiper {
+  padding-bottom: 40px;
+}
+
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  .testimonial-card img {
+    height: 280px;
+  }
+}
+
+
+
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">Soumya Pandey</div>
+    <nav>
+      <a href="about.html">ABOUT</a>
+      <a href="contact.html">CONTACT</a>
+      <a href="testimonial.html">TESTIMONIAL</a>
+    </nav>
+  </header>
+
+  <section class="hero" id="Home">
+    <div class="hero-text">
+      <h1>BUILD A PERSONAL BRAND THAT SELLS. WITHOUT SELLING OUT.</h1>
+      <p>Hi, I’m Soumya Pandey — a global social media marketer helping entrepreneurs, solopreneurs, business owners, and startups grow on Instagram and YouTube. With 5+ years of experience and a skilled team of 10 freelancers based in Mumbai, I help you build a digital presence that not only looks great — but brings in real results.</p>
+      <p>Built on freedom. Backed by my proven <strong>PACE™ framework.</strong></p>
+      <p>It’s time to monetise your voice. Build authority and create daily opportunities that grow your freedom, fulfilment and finance in abundance.</p>
+      <div class="cta-container1">
+     <div class="cta-button1" onclick="openCalendly()">
+    Let’s Work Together
+          <div class="arrow-circle">→</div>
+        </div>
+        <div class="line"></div>
+      </div>
+    </div>
+
+    </div>
+    <div class="hero-img">
+      <img src="img/Untitled (500 x 800 px) (500 x 700 px) (1440 x 1692 px) (1500 x 1600 px).png" alt="Emily Dunlop Sitting" />
+      <span>(Hi)</span>
+    </div>
+  </section>
+
+  <section class="container">
+    <div class="left">
+      <h5 style="text-transform: uppercase; letter-spacing: 1px; font-weight: 500; margin-bottom: 10px;">The Authority Builder™</h5>
+      <h1>Your First Step<br>To Building Authority</h1>
+      <p>The Authority Builder™ is your go-to <strong>FREE</strong> tool to get clear on your positioning, attract the right clients, and grow your personal brand with purpose.</p>
+      <p>It’s the start of a business that works for you – not the other way around.</p>
+      <a href="https://calendly.com/soumyapandeyjii/30min?month=2025-05" class="button">Get the Free Consultation →</a>
+    </div>
+    <div class="right">
+      <img src="img/t.png" alt="Authority Builder" />
+    </div>
+  </section>
+
+  <!-- ✨ New Plans Section Below -->
+  <section class="plans-section">
+    <h2>PICK A PLAN THAT WORKS FOR YOU</h2>
+    <p>Wherever you are on your journey, there’s a way we can grow together.</p>
+    <div class="plans-grid">
+<div class="plan-card plan-1">
+        <div class="plan-top">1:1 Free Consultation</div>
+        <div class="plan-bottom">
+         <a href="https://calendly.com/soumyapandeyjii/30min?month=2025-05" target="_blank" rel="noopener noreferrer">
+      <div class="arrow">→</div>
+    </a>
+          Right now, <strong>I’m exclusively focused on 1:1 coaching</strong> – for founders, coaches, and creators ready to go all in on their personal brand.
+          <br><br>
+          We’ll build your strategy, sharpen your positioning, and create a brand that attracts clients, opportunities, and revenue – consistently. <strong>Apply here.</strong>
+        </div>
+      </div>
+
+
+      <div class="plan-card plan-2">
+  <div class="plan-top">Personal Branding Consultation (Paid)</div>
+  <div class="plan-bottom">
+    <a href="https://calendly.com/soumyapandeyjii/30min?month=2025-05" target="_blank" rel="noopener noreferrer">
+      <div class="arrow">→</div>
+    </a>
+    <strong>Need a clear roadmap to launch or level up your personal brand?</strong><br>
+    Book a 1:1 strategy session with me to get laser-focused clarity on your niche, audience, and goals.<br><br> We’ll craft a content plan tailored for your social media, optimize your bio and profile, and do a deep-dive audit of your Instagram or YouTube. You’ll walk away with actionable tips to boost your visibility and start monetizing with confidence.
+  </div>
+</div>
+
+    </div>
+  </section>
+
+<!-- ✨ Our Services Section -->
+<section class="authority-academy">
+  <div class="academy-inner">
+    <div class="academy-image">
+      <img src="img/Untitled design (65).png" alt="Soumya Standing by Chair" />
+    </div>
+    <div class="academy-text">
+      <p class="label">OUR SERVICES</p>
+      <h2>1. Social Media Marketing</h2>
+      <ul>
+        <li>Instagram & YouTube Growth Strategy</li>
+        <li>Content Creation (Reels, Carousels, Shorts, Long-form Videos)</li>
+        <li>SEO Optimization (Hashtags, Captions, Descriptions)</li>
+        <li>Content Calendar + Planning</li>
+        <li>DM Strategy & Lead Funnel Building</li>
+        <li>Analytics & Growth Reporting</li>
+      </ul>
+   
+      <h2>2. Personal Branding Consultation (Paid)</h2>
+      <p>Need a clear roadmap to launch or level up your personal brand? Book a 1:1 strategy session with me.</p>
+      <ul>
+        <li>Clarity on your niche, audience & goals</li>
+        <li>Social media content plan</li>
+        <li>Bio + Profile optimization</li>
+        <li>1:1 audit of your Instagram or YouTube</li>
+        <li>Actionable tips for visibility & monetization</li>
+      </ul>
+    </div>
+  </div>
+  <div class="academy-cta">
+    <a href="https://calendly.com/soumyapandeyjii/30min?month=2025-05" class="academy-button">JOIN THE JOURNEY <span>→</span></a>
+    <div class="academy-symbol">↗</div>
+  </div>
+</section>
+
+<section class="newsletter-section">
+  <div class="newsletter-container">
+    <div class="newsletter-content">
+      <p class="tag">• STRATEGY & PROCESS</p>
+      <h2 class="title">OUR 4-STEP <br />GROWTH SYSTEM</h2>
+      <ul class="newsletter-list">
+        <li><strong>01</strong> Audit & Strategy: Understand your goals and gaps</li>
+        <li><strong>02</strong> Content Plan: Build an intentional content calendar</li>
+        <li><strong>03</strong> Execution: Design, write, and post with a clear objective</li>
+        <li><strong>04</strong> Conversion: Turn content into leads and clients</li>
+      </ul>
+    </div>
+    <div class="newsletter-image">
+      <img src="img/tt.png" alt="Strategy & Process" />
+    </div>
+  </div>
+</section>
+
+<section class="cta-banner">
+  <div class="cta-container">
+    <div class="cta-left">
+      <h2>Ready to build a<br><span>7-figure brand?</span></h2>
+      <p class="small-text">Normally $1,000</p>
+      <a href="https://calendly.com/soumyapandeyjii/30min?month=2025-05" class="cta-button">GRAB YOUR FREE SPOT</a>
+    </div>
+    <div class="cta-right">
+      <p class="free-label">FREE</p>
+    </div>
+  </div>
+</section>
+
+<section class="expect-section">
+  <div class="expect-text">
+    <h1>WHAT WE DELIVER FOR YOUR BRAND</h1>
+    <div class="expect-point">
+      <h2>01. Strategic content tailored to your niche</h2>
+      
+    </div>
+    <div class="expect-point">
+      <h2>02. 15–30 pieces of monthly content</h2>
+   
+    </div>
+    <div class="expect-point">
+      <h2>03. Reels, Carousels, Captions, SEO</h2>
+      
+    </div>
+    <div class="expect-point">
+      <h2>04. Timely posting & engagement</h2>
+      
+    </div>
+    <div class="expect-point">
+      <h2>05. Monthly performance tracking</h2>
+      
+    </div>
+    <div class="expect-point">
+      <h2>06. Brand-specific lead generation tactics</h2>
+   
+    </div>
+    <div class="expect-point">
+      <h2>07. WhatsApp/Email support</h2>
+     
+    </div>
+  </div>
+  <div class="expect-img">
+    <img src="img/ttt.png" alt="Emily Dunlop Standing" />
+  </div>
+</section>
+<!-- Connect Section -->
+<section class="connection-section" id="contact">
+  <div class="connect-container">
+    <h2 class="connect-title"><span>Trusted</span> by Thousands</h2>
+
+    <div class="stats">
+      <div class="stat" data-target="1000">
+        <i class="fab fa-instagram icon"></i>
+        <div class="stat-number">0</div>
+        <div class="stat-label">Instagram Followers</div>
+      </div>
+      <div class="stat" data-target="3000">
+        <i class="fab fa-linkedin-in icon"></i>
+        <div class="stat-number">0</div>
+        <div class="stat-label">LinkedIn Followers</div>
+      </div>
+      <div class="stat" data-target="13000">
+        <i class="fab fa-youtube icon"></i>
+        <div class="stat-number">0</div>
+        <div class="stat-label">YouTube Subscribers</div>
+      </div>
+      <div class="stat" data-target="50">
+        <i class="fas fa-users icon"></i>
+        <div class="stat-number">0</div>
+        <div class="stat-label">Built 50+ Personal Brands</div>
+      </div>
+    </div>
+
+   
+  </div>
+</section>
+
+<!-- Font and Icons -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<!-- Styles -->
+<style>
+  body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  .connection-section {
+    background: #8aa486;
+    padding: 60px 20px;
+    text-align: center;
+  }
+
+  .connect-title {
+    font-size: 2.8em;
+    color: #f0f2f4;
+    margin-bottom: 40px;
+  }
+
+  .connect-title span {
+    color: #f4efef;
+  }
+
+  .stats {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 50px;
+  }
+
+  .stat {
+    background: #fff;
+    padding: 30px 25px;
+    width: 220px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 123, 255, 0.1);
+    transition: transform 0.3s ease;
+  }
+
+  .stat:hover {
+    transform: translateY(-5px);
+  }
+
+  .stat .icon {
+    font-size: 2.5em;
+    color: #ff8c00;
+    margin-bottom: 10px;
+  }
+
+  .stat-number {
+    font-size: 2em;
+    font-weight: bold;
+    color: #ff8c00;
+  }
+
+  .stat-label {
+    font-size: 1em;
+    color: #444;
+    margin-top: 5px;
+  }
+
+  .social-icons {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+  }
+
+  .social-icons li a {
+    font-size: 1.8em;
+    color: #007BFF;
+    position: relative;
+    text-decoration: none;
+    transition: transform 0.2s;
+  }
+
+  .social-icons li a:hover {
+    transform: scale(1.2);
+  }
+
+  .social-icons .tooltip {
+    visibility: hidden;
+    background-color: #007BFF;
+    color: #fff;
+    font-size: 0.75em;
+    text-align: center;
+    padding: 4px 10px;
+    border-radius: 5px;
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+    opacity: 0;
+    transition: all 0.3s ease;
+    pointer-events: none;
+  }
+
+  .social-icons li a:hover .tooltip {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  @media screen and (max-width: 768px) {
+    .connect-title {
+      font-size: 2em;
+    }
+
+    .stat {
+      width: 80%;
+    }
+  }
+
+  @media screen and (max-width: 480px) {
+    .stats {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .social-icons {
+      gap: 20px;
+    }
+  }
+</style>
+
+<!-- Scroll-Triggered Count Animation Script -->
+<script>
+  const statElements = document.querySelectorAll('.stat');
+
+  const animateCounters = (entry) => {
+    const statNumber = entry.querySelector('.stat-number');
+    const target = +entry.getAttribute('data-target');
+    let count = 0;
+    const duration = 2000;
+    const stepTime = Math.max(10, duration / target);
+
+    const formatNumber = (num) => {
+      if (num >= 1000000) return (num / 1000000).toFixed(1) + 'M+';
+      if (num >= 1000) return (num / 1000).toFixed(1) + 'K+';
+      return num;
+    };
+
+    const update = () => {
+      count += Math.ceil(target / (duration / stepTime));
+      if (count >= target) {
+        statNumber.innerText = formatNumber(target);
+      } else {
+        statNumber.innerText = formatNumber(count);
+        setTimeout(update, stepTime);
+      }
+    };
+
+    update();
+  };
+
+  const observer = new IntersectionObserver((entries, obs) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        animateCounters(entry.target);
+        obs.unobserve(entry.target); // only run once
+      }
+    });
+  }, { threshold: 0.4 });
+
+  statElements.forEach(stat => observer.observe(stat));
+</script>
+
+<footer class="ed-footer">
+  <div class="ed-footer-top">
+    <div class="ed-column">
+      <p class="ed-heading">FIND</p>
+      <ul>
+        <li><a href="about.html">ABOUT ME</a></li>
+        <li><a href="#Home">HOMEPAGE</a></li>
+        <li><a href="testimonial.html">TESTIMONIAL</a></li>
+        <li><a href="contact.html">CONTACT</a></li>
+      </ul>
+    </div>
+    <div class="ed-column">
+      <p class="ed-heading">WORK WITH ME</p>
+      <ul>
+       
+        <li><a href="https://calendly.com/soumyapandeyjii/30min?month=2025-05">THE BRAND BUILDER™</a></li>
+      </ul>
+    </div>
+    <div class="ed-column">
+      <p class="ed-heading">CONNECT WITH ME</p>
+      <ul>
+        <li><a href="https://www.linkedin.com/in/soumya-pandey-9076b4339/">LINKEDIN</a></li>
+        <li><a href="https://www.instagram.com/your_smm_soumya/?hl=en">INSTAGRAM</a></li>
+        <li><a href="mailto:drsoumypandey94@gmail.com">EMAIL ME</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="ed-logo-center">
+    <h1 class="ed-logo">Soumya Pandey</h1>
+    
+  </div>
+
+  <div class="ed-footer-bottom">
+    <p>Soumya Pandey©2025</p>
+    <div class="ed-terms">
+      <a href="#">DESIGNED BY</a>
+      <a href="https://www.linkedin.com/in/nitish-kumar-516aba28b/">NITISH KUMAR</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  function openCalendly() {
+    window.open("https://calendly.com/soumyapandeyjii/30min?month=2025-05", "_blank");
+  }
+</script>
+
+</body>
+</html>

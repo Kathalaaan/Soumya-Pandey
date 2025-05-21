@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Testimonial Slider</title>
+
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+
+  <!-- Google Fonts: DM Sans -->
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Favicon -->
+   <link rel="icon" href="images/favi.png" type="image/png"> <!-- Add this line -->
+
+   <!-- Favicon for 16x16 px - Browser Tab -->
+   <link rel="icon" href="images/favi-16x16.png" sizes="16x16" type="image/png">
+   
+   <!-- Favicon for 32x32 px - High-DPI Displays (Retina) -->
+   <link rel="icon" href="images/favi-32x32.png" sizes="32x32" type="image/png">
+   
+   <!-- Favicon for 48x48 px - Windows Desktop -->
+   <link rel="icon" href="images/favi-48x48.png" sizes="48x48" type="image/png">
+   
+   <!-- Favicon for 64x64 px - High-Resolution Displays -->
+   <link rel="icon" href="images/favi-64x64.png" sizes="64x64" type="image/png">
+   
+   <!-- For iOS Devices (Apple Touch Icon) -->
+   <link rel="apple-touch-icon" href="images/favi-180x180.png">
+   
+   <!-- For Android Devices (Chrome Web App) -->
+   <link rel="icon" href="images/favi-192x192.png" sizes="192x192" type="image/png">
+   
+   <!-- Favicon for Windows Tiles (Microsoft) -->
+   <meta name="msapplication-TileImage" content="images/favi-144x144.png">
+   <meta name="msapplication-TileColor" content="#ffffff">
+
+  <style>
+    body {
+      font-family: 'DM Sans', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f9f5ef;
+    }
+
+    .swiper {
+      padding: 50px 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .swiper-slide {
+      background: white;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      padding: 30px;
+      box-sizing: border-box;
+      height: auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .testimonial-stars {
+      color: #6d8a4c;
+      font-size: 20px;
+      margin-bottom: 20px;
+    }
+
+    .testimonial-text {
+      font-size: 18px;
+      line-height: 1.6;
+      color: #222;
+    }
+
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      margin-top: 30px;
+    }
+
+    .testimonial-author img {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      margin-right: 15px;
+    }
+
+    .testimonial-author-name {
+      font-weight: bold;
+      text-transform: uppercase;
+      font-size: 14px;
+    }
+
+    @media (max-width: 767px) {
+      .testimonial-text {
+        font-size: 16px;
+      }
+    }
+
+    /* Vlog Section */
+    .vlog-section {
+      background-color: transparent;
+      background-size: cover;
+      background-repeat: no-repeat;
+      padding: 100px 20px;
+      text-align: center;
+    }
+
+    .vlog-container {
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .vlog-title {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 48px;
+      color: #ee691c;
+      position: relative;
+      margin-bottom: 80px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      text-shadow: 2px 2px #ffd6e6;
+    }
+
+    .vlog-title span {
+      color: #e8641d;
+      font-weight: 800;
+    }
+
+    .vlog-title::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      bottom: -15px;
+      transform: translateX(-50%);
+      width: 100px;
+      height: 4px;
+      border-radius: 2px;
+      background: linear-gradient(to right, #e13c80, #ff85a2);
+      animation: pulse-underline 2s ease-in-out infinite;
+    }
+
+    @keyframes pulse-underline {
+      0%, 100% {
+        opacity: 1;
+        transform: translateX(-50%) scaleX(1);
+      }
+      50% {
+        opacity: 0.6;
+        transform: translateX(-50%) scaleX(1.3);
+      }
+    }
+
+    .reel-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 40px;
+    }
+
+    .reel-box {
+      width: 280px;
+      height: 500px;
+      background-color: #fff;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 6px 6px 0px #2d033b;
+      transition: transform 0.3s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .reel-box video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 20px;
+      cursor: pointer;
+    }
+
+    .reel-box:hover {
+      transform: scale(1.05);
+    }
+
+    @media (max-width: 768px) {
+      .vlog-title {
+        font-size: 36px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .vlog-title {
+        font-size: 28px;
+      }
+    }
+
+    
+body {
+  margin: 0;
+  font-family: 'Helvetica Neue', sans-serif;
+  background-color: #f8f5f0;
+  color: #1c1c1c;
+}
+
+.ed-footer {
+  padding: 40px 20px;
+  background-color: #f8f5f0;
+  text-align: center;
+}
+
+.ed-footer-top {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  border-top: 1px solid #1c1c1c;
+  padding-top: 40px;
+  margin-bottom: 40px;
+  position: relative;
+}
+
+.ed-footer-top::before {
+  content: '*';
+  font-size: 40px;
+  color: #ec6e45;
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #f8f5f0;
+  padding: 0 10px;
+}
+
+.ed-column {
+  flex: 1;
+  min-width: 200px;
+  padding: 20px;
+  text-align: left;
+}
+
+.ed-heading {
+  font-size: 14px;
+  text-transform: uppercase;
+  color: #999;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.ed-heading::before {
+  content: '•';
+  color: #ec6e45;
+  margin-right: 6px;
+}
+
+.ed-column ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.ed-column a {
+  text-decoration: none;
+  color: #1c1c1c;
+  display: block;
+  margin: 8px 0;
+  font-weight: 500;
+}
+
+.ed-logo-center {
+  text-align: center;
+  margin: 40px 0;
+  position: relative;
+}
+
+.ed-logo {
+  font-size: 100px;
+  font-weight: bold;
+  color: #ec6e45;
+  margin: 0;
+  line-height: 1;
+}
+
+.ed-scroll-top {
+  width: 36px;
+  height: 36px;
+  background-color: #fff;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  position: absolute;
+  right: 50%;
+  bottom: 8px;
+  transform: translateX(50%);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  cursor: pointer;
+}
+
+.ed-footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+  padding-top: 20px;
+  flex-wrap: wrap;
+  border-top: 1px solid #eee;
+}
+
+.ed-terms a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: #1c1c1c;
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .ed-footer-top {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .ed-footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .ed-logo {
+    font-size: 60px;
+  }
+
+  .ed-scroll-top {
+    right: auto;
+    left: 50%;
+  }
+}
+  </style>
+</head>
+<body>
+
+  <!-- Swiper -->
+  <div class="swiper mySwiper" id="Test">
+    <div class="swiper-wrapper">
+      
+      <!-- Testimonial 1 -->
+      <div class="swiper-slide" onclick="window.open('https://www.linkedin.com/in/neerajkumarsaluja/', '_blank')">
+        <div class="testimonial-stars">★★★★★</div>
+        <div class="testimonial-text">
+          Soumya was a delight to work with!<br>
+          Her creative ideas and sharp editing elevated my mortgage content.<br>
+          Professional, prompt, and always going the extra mile.<br>
+          Highly recommend her as a social media manager!
+        </div>
+        <div class="testimonial-author">
+          <img src="img/1.png" alt="Agata">
+          <div class="testimonial-author-name">Neeraj Kumar</div>
+        </div>
+      </div>
+
+      <!-- Testimonial 2 -->
+      <div class="swiper-slide" onclick="window.open('https://www.linkedin.com/in/mehakpreet-kaur-1ba133300/', '_blank')">
+        <div class="testimonial-stars">★★★★★</div>
+        <div class="testimonial-text">
+          Soumya is a gem for YouTube strategy and content!<br>
+          Her deep knowledge, creative ideas, and problem-solving mindset are unmatched.<br>
+          She truly gets the platform and offers game-changing insights.<br>
+          Highly recommend her expertise!
+        </div>
+        <div class="testimonial-author">
+          <img src="img/2.png" alt="Helena">
+          <div class="testimonial-author-name">Mehakpreet Kaur</div>
+        </div>
+      </div>
+
+      <!-- Testimonial 3 -->
+      <div class="swiper-slide" onclick="window.open('https://www.instagram.com/divorcecoachtheresa/?hl=en', '_blank')">
+        <div class="testimonial-stars">★★★★★</div>
+        <div class="testimonial-text">
+          Working with Soumya has been a game-changer for my business.<br>
+          As a divorce coach for women 50+, I needed a strategy that truly connected — and she delivered!<br>
+          Soumya deeply understood my mission and crafted an Instagram approach that transformed my presence.<br>
+          In weeks, I saw more engagement, messages, and leads.
+        </div>
+        <div class="testimonial-author">
+          <img src="img/4.png" alt="Laura">
+          <div class="testimonial-author-name">Theresa S-Ibler</div>
+        </div>
+      </div>
+
+      <!-- Testimonial 4 -->
+      <div class="swiper-slide" onclick="window.open('https://www.linkedin.com/in/girish-babu-747434b5/', '_blank')">
+        <div class="testimonial-stars">★★★★★</div>
+        <div class="testimonial-text">
+          Soumya is an energetic, enthusiastic, and professional public speaker.<br>
+          She’s hardworking, meets deadlines, and works with a clear, systematic approach.
+        </div>
+        <div class="testimonial-author">
+          <img src="img/3.png" alt="Helena">
+          <div class="testimonial-author-name">Girish Babu</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Vlog Section - Reels -->
+  <section class="vlog-section">
+    <div class="vlog-container">
+      <h2 class="vlog-title"><span>See What My Clients Say</span></h2>
+      <div class="reel-grid">
+        <div class="reel-box">
+          <video src="img/v2.mp4" autoplay muted loop playsinline controls></video>
+        </div>
+        <div class="reel-box">
+          <video src="img/v1.mp4" autoplay muted loop playsinline controls></video>
+        </div>
+      </div>
+    </div>
+  </section>
+
+ <footer class="ed-footer">
+  <div class="ed-footer-top">
+    <div class="ed-column">
+      <p class="ed-heading">FIND</p>
+      <ul>
+        <li><a href="about.html">ABOUT ME</a></li>
+        <li><a href="index.html">HOMEPAGE</a></li>
+        <li><a href="#Test">TESTIMONIAL</a></li>
+        <li><a href="contact.html">CONTACT</a></li>
+      </ul>
+    </div>
+    <div class="ed-column">
+      <p class="ed-heading">WORK WITH ME</p>
+      <ul>
+       
+        <li><a href="https://calendly.com/soumyapandeyjii/30min?month=2025-05">THE BRAND BUILDER™</a></li>
+      </ul>
+    </div>
+    <div class="ed-column">
+      <p class="ed-heading">CONNECT WITH ME</p>
+      <ul>
+        <li><a href="https://www.linkedin.com/in/soumya-pandey-9076b4339/">LINKEDIN</a></li>
+        <li><a href="https://www.instagram.com/your_smm_soumya/?hl=en">INSTAGRAM</a></li>
+        <li><a href="mailto:drsoumypandey94@gmail.com">EMAIL ME</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="ed-logo-center">
+    <h1 class="ed-logo">Soumya Pandey</h1>
+    
+  </div>
+
+  <div class="ed-footer-bottom">
+    <p>Soumya Pandey©2025</p>
+    <div class="ed-terms">
+      <a href="#">DESIGNED BY</a>
+      <a href="https://www.linkedin.com/in/nitish-kumar-516aba28b/">NITISH KUMAR</a>
+    </div>
+  </div>
+</footer>
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      new Swiper(".mySwiper", {
+        loop: true,
+        autoplay: {
+          delay: 3300,
+          disableOnInteraction: false,
+        },
+        spaceBetween: 30,
+        breakpoints: {
+          320: { slidesPerView: 1 },
+          768: { slidesPerView: 2 },
+          1024: { slidesPerView: 3 },
+        },
+      });
+    });
+  </script>
+</body>
+</html>
